@@ -35,6 +35,9 @@ const App = () => {
 
   useEffect(() => {
     const tapas = retrieve();
+    if (tapas === null) {
+      tapas = { value: "Create some tapas!", checked: true };
+    }
     dispatch({
       type: "loadTapas",
       payload: tapas,

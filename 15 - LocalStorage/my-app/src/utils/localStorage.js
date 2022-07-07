@@ -3,5 +3,8 @@ export const save = (tapas = []) => {
 };
 
 export const retrieve = () => {
-  return JSON.parse(localStorage.getItem("tapas"));
+  const tapas = JSON.parse(localStorage.getItem("tapas"));
+  return tapas === null
+    ? [{ value: "Enjoy your tapas!", checked: true }]
+    : tapas;
 };
